@@ -19,7 +19,6 @@ function solveEquation(a, b, c) {
 
 function calculateTotalMortgage(percent, contribution, amount, date) {
 
-  "use strict"
   let per = parseInt(percent) / 100 / 12;
   let con = parseInt(contribution);
   let am = parseInt(amount);
