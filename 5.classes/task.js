@@ -74,13 +74,12 @@ class Library {
 
     findBookBy(type, value) {
         let book = this.books.find(el => el[type] == value)
-        if (book == undefined) return null
-        else return book
+        return book || null;
     }
     giveBookByName(bookName) {
         let book = this.books.splice(this.books.findIndex(el => el.name == bookName), 1)
-        if (book[0] == undefined) return null
-        else return book[0]
+        if (book == undefined) return null
+        else return book
     }
 }
 //    Задание № 3
