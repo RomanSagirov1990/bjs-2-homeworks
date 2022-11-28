@@ -34,10 +34,9 @@ class AlarmClock {
     }
     start() {
         let checkAlarm = checkClock.bind(this);
-        function checkClock(callback) {
-            if (callback.time === this.getCurrentFormattedTime()) {
-                return checkAlarm;
-            }
+        function checkClock(objAlarmСlock) {
+            if (objAlarmСlock.time === this.getCurrentFormattedTime()) 
+            callback(objAlarmСlock); // Сильно не ругайтесь если не правиьно)))))
         }
         if (!this.timerId) {
             this.timerId = setInterval(() => this.alarmCollection.forEach(el => checkAlarm(el)), 1000);
