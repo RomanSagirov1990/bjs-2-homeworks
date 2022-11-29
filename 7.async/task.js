@@ -33,10 +33,11 @@ class AlarmClock {
         return output;
     }
     start() {
-        let checkAlarm = checkClock.bind(this);
-        function checkClock(objAlarmСlock) {
-            if (objAlarmСlock.time === this.getCurrentFormattedTime()) 
-            callback(objAlarmСlock); // Сильно не ругайтесь если не правиьно)))))
+        let checkAlarm = (checkClock) => {
+            let alarm = this.getCurrentFormattedTime();
+            if (checkClock.time === alarm) {
+                return checkClock.сallback();
+            }
         }
         if (!this.timerId) {
             this.timerId = setInterval(() => this.alarmCollection.forEach(el => checkAlarm(el)), 1000);
